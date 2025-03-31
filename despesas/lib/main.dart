@@ -101,6 +101,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                           padding: const EdgeInsets.all(10),
                           child: Text(
+                            //Interpolando String no valor da transação
                             'R\$ ${tr.value.toStringAsFixed(2)}',
                             style: const TextStyle(
                               fontSize: 20,
