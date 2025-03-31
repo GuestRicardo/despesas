@@ -87,12 +87,31 @@ class MyHomePage extends StatelessWidget {
                           ),
                           padding: const EdgeInsets.all(10),
                           child: Text(
-                            tr.title,
+                            tr.value.toString(),
                             style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              tr.title,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              tr.category,
+                              style: const TextStyle(color: Colors.grey),
+                            ),
+                            Text(
+                              tr.date.toString(),
+                              style: const TextStyle(color: Colors.grey),
+                            ),
+                          ],
                         ),
                       ],
                     ),
