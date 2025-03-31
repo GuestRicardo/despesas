@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:despesas/model/transaction.dart';
 
 main() => runApp(ExpensesApp());
 
@@ -21,7 +22,14 @@ class ExpensesApp extends StatelessWidget {
 
 //esta é a tela inicial do aplicativo'
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  MyHomePage({super.key});
+  final List<String> transactions = [
+    'Transação 1',
+    'Transação 2',
+    'Transação 3',
+    'Transação 4',
+    'Transação 5',
+  ];
 
   @override
   Widget build(BuildContext context) {
