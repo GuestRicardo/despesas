@@ -25,7 +25,20 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Despesas Pessoais')),
-      body: const Center(child: Text('Versão inicial do aplicativo')),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          SizedBox(
+            width: double.infinity,
+            child: Card(
+              color: Colors.blue,
+              elevation: 5,
+              child: Text('Gráfico de Despesas'),
+            ),
+          ),
+          Card(elevation: 5, child: Text('Lista de Transações')),
+        ],
+      ),
     );
   }
 }
