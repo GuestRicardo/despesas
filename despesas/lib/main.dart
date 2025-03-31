@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 main() => runApp(ExpensesApp());
 
+//este é o widget raiz do aplicativo
 class ExpensesApp extends StatelessWidget {
   const ExpensesApp({super.key});
 
@@ -18,6 +19,7 @@ class ExpensesApp extends StatelessWidget {
   }
 }
 
+//esta é a tela inicial do aplicativo'
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
@@ -26,7 +28,8 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Despesas Pessoais')),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(
             width: double.infinity,
