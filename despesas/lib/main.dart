@@ -10,14 +10,7 @@ class ExpensesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Despesas',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(),
-    );
+    return MaterialApp(title: 'TESTE', home: MyHomePage());
   }
 }
 
@@ -58,7 +51,14 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Despesas Pessoais')),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 0, 0, 0),
+
+        title: Text('Despesas Pessoais', textAlign: TextAlign.center),
+      ),
+
+      backgroundColor: Color.fromARGB(255, 26, 26, 26),
+
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
