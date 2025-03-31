@@ -54,7 +54,21 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 0, 0),
 
-        title: Text('Despesas Pessoais', textAlign: TextAlign.center),
+        title: Text(
+          'Despesas Pessoais',
+          style: TextStyle(
+            fontSize: 40,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+            textBaseline: TextBaseline.alphabetic,
+            fontFamily: 'OpenSans',
+            fontStyle: FontStyle.normal,
+            letterSpacing: 1.5,
+            shadows: [
+              Shadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 3),
+            ],
+          ),
+        ),
       ),
 
       backgroundColor: Color.fromARGB(255, 26, 26, 26),
