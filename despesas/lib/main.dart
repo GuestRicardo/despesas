@@ -110,6 +110,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               tr.title,
@@ -120,7 +121,9 @@ class MyHomePage extends StatelessWidget {
                             ),
                             Text(
                               tr.category,
-                              style: const TextStyle(color: Colors.grey),
+                              style: const TextStyle(
+                                color: Color.fromARGB(255, 77, 76, 76),
+                              ),
                             ),
                             Text(
                               tr.date.toString(),
