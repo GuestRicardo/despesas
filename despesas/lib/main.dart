@@ -100,7 +100,7 @@ class MyHomePage extends StatelessWidget {
                             Text(
                               tr.title,
                               style: const TextStyle(
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
