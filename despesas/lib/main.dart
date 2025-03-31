@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './model/transaction.dart';
 import 'package:despesas/model/transaction.dart';
 
 main() => runApp(ExpensesApp());
@@ -23,12 +24,35 @@ class ExpensesApp extends StatelessWidget {
 //esta é a tela inicial do aplicativo'
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
-  final List<String> transactions = [
-    'Transação 1',
-    'Transação 2',
-    'Transação 3',
-    'Transação 4',
-    'Transação 5',
+  final _transactions = [
+    Transaction(
+      id: 't1',
+      title: 'Novo Tênis de Corrida',
+      value: 310.76,
+      date: DateTime.now(),
+      category: 'Esportes',
+    ),
+    Transaction(
+      id: 't2',
+      title: 'Conta de Luz',
+      value: 211.35,
+      date: DateTime.now(),
+      category: 'Contas',
+    ),
+    Transaction(
+      id: 't3',
+      title: 'Conta de Água',
+      value: 100.00,
+      date: DateTime.now(),
+      category: 'Contas',
+    ),
+    Transaction(
+      id: 't4',
+      title: 'Novo Celular',
+      value: 1500.00,
+      date: DateTime.now(),
+      category: 'Tecnologia',
+    ),
   ];
 
   @override
@@ -47,7 +71,34 @@ class MyHomePage extends StatelessWidget {
               child: Text('Gráfico de Despesas'),
             ),
           ),
-          Card(elevation: 5, child: Text('Lista de Transações')),
+          Column(
+            children:
+                _transactions.map((tr) {
+                  return Card(
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 15,
+                          ),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.purple, width: 2),
+                          ),
+                          padding: const EdgeInsets.all(10),
+                          child: Text(
+                            tr.title,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }).toList(),
+          ),
         ],
       ),
     );
