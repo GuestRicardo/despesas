@@ -143,34 +143,36 @@ class MyHomePage extends StatelessWidget {
           ),
           Card(
             elevation: 8,
-            child: Column(
-              children: <Widget>[
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: '  Título',
-                    labelStyle: TextStyle(color: Colors.purple),
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: '  Título',
+                      labelStyle: TextStyle(color: Colors.purple),
+                    ),
+                    onChanged: (value) {
+                      //setState(() {
+                      //  _titleInput = value;
+                      //});
+                    },
                   ),
-                  onChanged: (value) {
-                    //setState(() {
-                    //  _titleInput = value;
-                    //});
-                  },
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: '  Valor (R\$)',
-                    labelStyle: TextStyle(color: Colors.purple),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: '  Valor (R\$)',
+                      labelStyle: TextStyle(color: Colors.purple),
+                    ),
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    onChanged: (value) {
+                      //setState(() {
+                      //  _valueInput = value;
+                      //});
+                    },
                   ),
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  onChanged: (value) {
-                    //setState(() {
-                    //  _valueInput = value;
-                    //});
-                  },
-                ),
-                SizedBox(height: 200, child: Text('Gráfico aqui!')),
-              ],
+                  SizedBox(height: 200, child: Text('Gráfico aqui!')),
+                ],
+              ),
             ),
           ),
         ],
