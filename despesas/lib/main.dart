@@ -74,9 +74,8 @@ class MyHomePage extends StatelessWidget {
       ),
 
       backgroundColor: Color.fromARGB(255, 26, 26, 26),
-
+      //Despesas Pessoais
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(
@@ -87,6 +86,7 @@ class MyHomePage extends StatelessWidget {
               child: Text('Gráfico de Despesas'),
             ),
           ),
+          //Espaço entre o gráfico e a lista de transações
           Column(
             children:
                 _transactions.map((tr) {
@@ -129,7 +129,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              DateFormat('dd/ mm/ yyy').format(tr.date),
+                              DateFormat('dd/MM/yyy').format(tr.date),
                               style: const TextStyle(
                                 color: Color.fromARGB(255, 56, 56, 56),
                               ),
@@ -140,6 +140,38 @@ class MyHomePage extends StatelessWidget {
                     ),
                   );
                 }).toList(),
+          ),
+          Card(
+            elevation: 8,
+            child: Column(
+              children: <Widget>[
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: '  Título',
+                    labelStyle: TextStyle(color: Colors.purple),
+                  ),
+                  onChanged: (value) {
+                    //setState(() {
+                    //  _titleInput = value;
+                    //});
+                  },
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: '  Valor (R\$)',
+                    labelStyle: TextStyle(color: Colors.purple),
+                  ),
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  onChanged: (value) {
+                    //setState(() {
+                    //  _valueInput = value;
+                    //});
+                  },
+                ),
+                SizedBox(height: 200, child: Text('Gráfico aqui!')),
+              ],
+            ),
           ),
         ],
       ),
