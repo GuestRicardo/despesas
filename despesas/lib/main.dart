@@ -171,13 +171,17 @@ class MyHomePage extends StatelessWidget {
                       //});
                     },
                   ),
-                  ElevatedButton(
-                    child: Text(
-                      'Adicionar Transação',
-                      style: TextStyle(color: Colors.white),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: '  Categoria',
+                      labelStyle: TextStyle(color: Colors.purple),
                     ),
+                    onChanged: (value) {
+                      //setState(() {
+                      //  _categoryInput = value;
+                      //});
+                    },
                   ),
-                  SizedBox(height: 200, child: Text('Gráfico aqui!')),
                 ],
               ),
             ),
