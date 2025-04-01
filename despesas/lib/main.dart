@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import './model/transaction.dart';
 import 'package:intl/intl.dart';
-import Intl
+import 'package:flutter/services.dart';
 
 main() => runApp(ExpensesApp());
 
@@ -19,6 +18,7 @@ class ExpensesApp extends StatelessWidget {
 //esta é a tela inicial do aplicativo'
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
+
   final _transactions = [
     Transaction(
       id: 't1',
@@ -125,12 +125,14 @@ class MyHomePage extends StatelessWidget {
                             Text(
                               tr.category,
                               style: const TextStyle(
-                                color: Color.fromARGB(255, 77, 76, 76),
+                                color: Color.fromARGB(255, 26, 26, 26),
                               ),
                             ),
                             Text(
-                              DateFormat('d MMM y').format(tr.date),
-                              style: const TextStyle(color: Colors.grey),
+                              DateFormat('dd/ mm/ yyy').format(tr.date),
+                              style: const TextStyle(
+                                color: Color.fromARGB(255, 56, 56, 56),
+                              ),
                             ),
                           ],
                         ),
