@@ -143,7 +143,8 @@ class MyHomePage extends StatelessWidget {
           ),
           Card(
             elevation: 8,
-            child: Container(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: <Widget>[
                   TextField(
