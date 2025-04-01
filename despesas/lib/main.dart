@@ -144,7 +144,7 @@ class MyHomePage extends StatelessWidget {
           Card(
             elevation: 8,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 children: <Widget>[
                   TextField(
@@ -170,6 +170,12 @@ class MyHomePage extends StatelessWidget {
                       //  _valueInput = value;
                       //});
                     },
+                  ),
+                  ElevatedButton(
+                    child: Text(
+                      'Adicionar Transação',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                   SizedBox(height: 200, child: Text('Gráfico aqui!')),
                 ],
