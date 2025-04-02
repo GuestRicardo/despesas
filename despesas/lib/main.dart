@@ -182,6 +182,22 @@ class MyHomePage extends StatelessWidget {
                       //});
                     },
                   ),
+                  TextButton(
+                    style: ButtonStyle(
+                      foregroundColor: WidgetStateProperty.all<Color>(
+                        Colors.blue,
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Nova Transação',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
