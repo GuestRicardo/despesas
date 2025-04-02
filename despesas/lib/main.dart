@@ -182,21 +182,26 @@ class MyHomePage extends StatelessWidget {
                       //});
                     },
                   ),
-                  TextButton(
-                    style: ButtonStyle(
-                      foregroundColor: WidgetStateProperty.all<Color>(
-                        Colors.blue,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        style: ButtonStyle(
+                          foregroundColor: WidgetStateProperty.all<Color>(
+                            Colors.blue,
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: Text(
+                          'Nova Transação',
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.purple,
+                          ),
+                        ),
                       ),
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      'Nova Transação',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.purple,
-                      ),
-                    ),
+                    ],
                   ),
                 ],
               ),
