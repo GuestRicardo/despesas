@@ -82,7 +82,7 @@ class MyHomePage extends StatelessWidget {
             width: double.infinity,
             child: Card(
               color: Colors.blue,
-              elevation: 5,
+              elevation: 15,
               child: Text('Gráfico de Despesas'),
             ),
           ),
