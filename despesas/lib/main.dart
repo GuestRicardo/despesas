@@ -2,6 +2,7 @@ import 'package:despesas/components/transaction_list.dart';
 import 'package:flutter/material.dart';
 import './model/transaction.dart';
 import 'package:flutter/services.dart';
+import 'components/transaction_form.dart';
 
 main() => runApp(ExpensesApp());
 
@@ -17,10 +18,6 @@ class ExpensesApp extends StatelessWidget {
 
 //esta é a tela inicial do aplicativo'
 class MyHomePage extends StatelessWidget {
-  final titleController = TextEditingController();
-  final valueController = TextEditingController();
-  final categoryController = TextEditingController();
-
   final _transactions = [
     Transaction(
       id: 't1',
@@ -92,64 +89,7 @@ class MyHomePage extends StatelessWidget {
           ),
           //Espaço entre o gráfico e a lista de transações
           TransactionList(_transactions),
-          Card(
-            elevation: 8,
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                children: <Widget>[
-                  TextField(
-                    controller: titleController,
-                    decoration: InputDecoration(
-                      labelText: '  Título',
-                      labelStyle: TextStyle(color: Colors.purple),
-                    ),
-                  ),
-                  TextField(
-                    controller: valueController,
-                    decoration: InputDecoration(
-                      labelText: '  Valor (R\$)',
-                      labelStyle: TextStyle(color: Colors.purple),
-                    ),
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  ),
-                  TextField(
-                    controller: categoryController,
-                    decoration: InputDecoration(
-                      labelText: '  Categoria',
-                      labelStyle: TextStyle(color: Colors.purple),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        style: ButtonStyle(
-                          foregroundColor: WidgetStateProperty.all<Color>(
-                            Colors.blue,
-                          ),
-                        ),
-                        onPressed: () {
-                          print(titleController.text);
-                          print(valueController.text);
-                          print(categoryController.text);
-                        },
-                        child: Text(
-                          'Nova Transação',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.purple,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
+          TransactionForm(),
         ],
       ),
     );
