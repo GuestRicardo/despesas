@@ -1,8 +1,5 @@
-import 'package:despesas/components/transaction_list.dart';
 import 'package:flutter/material.dart';
-import './model/transaction.dart';
-import 'package:flutter/services.dart';
-import 'components/transaction_form.dart';
+import 'package:despesas/components/transaction_user.dart';
 
 main() => runApp(ExpensesApp());
 
@@ -12,44 +9,13 @@ class ExpensesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'TESTE', home: MyHomePage());
+    return MaterialApp(home: MyHomePage());
   }
 }
 
 //esta é a tela inicial do aplicativo'
 class MyHomePage extends StatelessWidget {
-  final _transactions = [
-    Transaction(
-      id: 't1',
-      title: 'Novo Tênis de Corrida',
-      value: 310.76,
-      date: DateTime.now(),
-      category: 'Esportes',
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Conta de Luz',
-      value: 211.35,
-      date: DateTime.now(),
-      category: 'Contas',
-    ),
-    Transaction(
-      id: 't3',
-      title: 'Conta de Água',
-      value: 100.00,
-      date: DateTime.now(),
-      category: 'Contas',
-    ),
-    Transaction(
-      id: 't4',
-      title: 'Novo Celular',
-      value: 1500.00,
-      date: DateTime.now(),
-      category: 'Tecnologia',
-    ),
-  ];
-
-  MyHomePage({super.key});
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -88,8 +54,7 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           //Espaço entre o gráfico e a lista de transações
-          TransactionList(_transactions),
-          TransactionForm(),
+          TransactionUser(),
         ],
       ),
     );
