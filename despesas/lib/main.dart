@@ -17,7 +17,9 @@ class ExpensesApp extends StatelessWidget {
 
 //esta é a tela inicial do aplicativo'
 class MyHomePage extends StatelessWidget {
-  MyHomePage({super.key});
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
+  final categoryController = TextEditingController();
 
   final _transactions = [
     Transaction(
@@ -49,6 +51,8 @@ class MyHomePage extends StatelessWidget {
       category: 'Tecnologia',
     ),
   ];
+
+  MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -148,39 +152,27 @@ class MyHomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   TextField(
+                    controller: titleController,
                     decoration: InputDecoration(
                       labelText: '  Título',
                       labelStyle: TextStyle(color: Colors.purple),
                     ),
-                    onChanged: (value) {
-                      //setState(() {
-                      //  _titleInput = value;
-                      //});
-                    },
                   ),
                   TextField(
+                    controller: valueController,
                     decoration: InputDecoration(
                       labelText: '  Valor (R\$)',
                       labelStyle: TextStyle(color: Colors.purple),
                     ),
                     keyboardType: TextInputType.number,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    onChanged: (value) {
-                      //setState(() {
-                      //  _valueInput = value;
-                      //});
-                    },
                   ),
                   TextField(
+                    controller: categoryController,
                     decoration: InputDecoration(
                       labelText: '  Categoria',
                       labelStyle: TextStyle(color: Colors.purple),
                     ),
-                    onChanged: (value) {
-                      //setState(() {
-                      //  _categoryInput = value;
-                      //});
-                    },
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -191,7 +183,11 @@ class MyHomePage extends StatelessWidget {
                             Colors.blue,
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          print(titleController.text);
+                          print(valueController.text);
+                          print(categoryController.text);
+                        },
                         child: Text(
                           'Nova Transação',
                           style: TextStyle(
