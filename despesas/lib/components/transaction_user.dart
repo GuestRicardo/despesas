@@ -63,7 +63,10 @@ class _TransactionUserState extends State<TransactionUser> {
     // TODO: implement build
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[TransactionList(_transactions), TransactionForm()],
+      children: <Widget>[
+        TransactionList(_transactions),
+        TransactionForm(_addTransaction),
+      ],
     );
   }
 }
