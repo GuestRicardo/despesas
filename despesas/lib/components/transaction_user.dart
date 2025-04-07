@@ -70,3 +70,7 @@ class _TransactionUserState extends State<TransactionUser> {
     );
   }
 }
+
+extension on Random {
+  nextDouble() {}
+}
