@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../model/transaction.dart';
 import 'package:flutter/services.dart';
@@ -52,9 +53,9 @@ class TransactionForm extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    titleController.text;
-                    valueController.text;
-                    categoryController.text;
+                    final title = titleController.text;
+                    final value = valueController.text;
+                    final category = categoryController.text;
                   },
                   child: Text(
                     'Nova Transação',
