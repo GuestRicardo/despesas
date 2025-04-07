@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
 
-import 'package:flutter/material.dart';
-import 'transaction_form.dart';
 import 'transaction_list.dart';
 import '../../model/transaction.dart';
+import './transaction_form.dart';
 
 class TransactionUser extends StatefulWidget {
   const TransactionUser({super.key});
@@ -44,7 +44,7 @@ class _TransactionUserState extends State<TransactionUser> {
     ),
   ];
 
-  _addTransaction(String title, double value, DateTime date) {
+  _addTransaction(String title, double value, String category) {
     final newTransaction = Transaction(
       id: Random().toString(),
       title: title,
