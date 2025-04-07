@@ -50,7 +50,7 @@ class _TransactionUserState extends State<TransactionUser> {
       title: title,
       value: value,
       date: DateTime.now(),
-      category: 'Categoria',
+      category: category,
     );
 
     setState(() {
