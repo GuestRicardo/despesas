@@ -1,3 +1,5 @@
+import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
+
 import 'package:flutter/material.dart';
 import 'transaction_form.dart';
 import 'transaction_list.dart';
@@ -41,6 +43,20 @@ class _TransactionUserState extends State<TransactionUser> {
       category: 'Tecnologia',
     ),
   ];
+
+  _addTransaction(String title, double value, DateTime date) {
+    final newTransaction = Transaction(
+      id: Random().toString(),
+      title: title,
+      value: value,
+      date: DateTime.now(),
+      category: 'Categoria',
+    );
+
+    setState(() {
+      _transactions.add(newTransaction);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
