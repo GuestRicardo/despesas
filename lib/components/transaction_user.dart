@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
+import 'dart:math';
 
 import 'transaction_list.dart';
 import '../../model/transaction.dart';
@@ -69,8 +69,4 @@ class _TransactionUserState extends State<TransactionUser> {
       ],
     );
   }
-}
-
-extension on Random {
-  nextDouble() {}
 }
