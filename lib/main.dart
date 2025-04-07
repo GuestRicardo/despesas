@@ -42,20 +42,22 @@ class MyHomePage extends StatelessWidget {
 
       backgroundColor: Color.fromARGB(255, 26, 26, 26),
       //Despesas Pessoais
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          SizedBox(
-            width: double.infinity,
-            child: Card(
-              color: Colors.blue,
-              elevation: 15,
-              child: Text('Gráfico de Despesas'),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            SizedBox(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                elevation: 15,
+                child: Text('Gráfico de Despesas'),
+              ),
             ),
-          ),
-          //Espaço entre o gráfico e a lista de transações
-          TransactionUser(),
-        ],
+            //Espaço entre o gráfico e a lista de transações
+            TransactionUser(),
+          ],
+        ),
       ),
     );
   }
