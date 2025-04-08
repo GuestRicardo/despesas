@@ -38,6 +38,14 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {
+              //Adicionar transação
+            },
+          ),
+        ],
       ),
 
       backgroundColor: Color.fromARGB(255, 26, 26, 26),
