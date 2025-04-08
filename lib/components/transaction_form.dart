@@ -10,6 +10,17 @@ class TransactionForm extends StatelessWidget {
   final void Function(String, double, String) onSubmit;
   TransactionForm(this.onSubmit, {super.key});
 
+  _submitForm() {
+    final title = titleController.text;
+    final value = double.tryParse(valueController.text) ?? 0.0;
+    final category = categoryController.text;
+
+    if (title.isEmpty || value <= 0 || category.isEmpty) {
+      return;
+    }
+    onSubmit(title, value, category);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -20,6 +31,7 @@ class TransactionForm extends StatelessWidget {
           children: <Widget>[
             TextField(
               controller: titleController,
+              onSubmitted: (_) => _submitForm(),
               decoration: InputDecoration(
                 labelText: '  Título',
                 labelStyle: TextStyle(color: Colors.purple),
@@ -27,16 +39,19 @@ class TransactionForm extends StatelessWidget {
             ),
             TextField(
               controller: valueController,
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              //o anderline na função abaixo significa que nao será usada para nada
+              onSubmitted: (_) => _submitForm(),
               decoration: InputDecoration(
                 labelText: '  Valor (R\$)',
                 labelStyle: TextStyle(color: Colors.purple),
               ),
               //teclado numerico
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             ),
             TextField(
               controller: categoryController,
+              onSubmitted: (_) => _submitForm(),
               decoration: InputDecoration(
                 labelText: '  Categoria',
                 labelStyle: TextStyle(color: Colors.purple),
@@ -51,12 +66,7 @@ class TransactionForm extends StatelessWidget {
                       Colors.blue,
                     ),
                   ),
-                  onPressed: () {
-                    final title = titleController.text;
-                    final value = double.tryParse(valueController.text) ?? 0.0;
-                    final category = categoryController.text;
-                    onSubmit(title, value, category);
-                  },
+                  onPressed: _submitForm,
                   child: Text(
                     'Nova Transação',
                     style: TextStyle(
