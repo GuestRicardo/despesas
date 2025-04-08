@@ -31,7 +31,8 @@ class TransactionForm extends StatelessWidget {
                 labelText: '  Valor (R\$)',
                 labelStyle: TextStyle(color: Colors.purple),
               ),
-              keyboardType: TextInputType.number,
+              //teclado numerico
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             ),
             TextField(
