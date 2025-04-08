@@ -17,6 +17,15 @@ class ExpensesApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
+  _openTransactionForm(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (_) {
+        return TransactionUser();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
