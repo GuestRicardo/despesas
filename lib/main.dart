@@ -40,6 +40,7 @@ class MyHomePage extends StatelessWidget {
         ),
         actions: <Widget>[
           IconButton(
+            color: Colors.white,
             icon: Icon(Icons.add),
             onPressed: () {
               //Adicionar transação
@@ -67,6 +68,14 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        child: Icon(Icons.add),
+        onPressed: () {
+          //Adicionar transação
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
