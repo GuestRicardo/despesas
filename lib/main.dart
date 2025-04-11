@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:math';
 import 'package:intl/intl.dart';
-
-import './components/transaction_user.dart';
 import './components/transaction_list.dart';
 import './components/transaction_form.dart';
 import '../../model/transaction.dart';
@@ -53,11 +51,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  _openTransactionForm(BuildContext context) {
+  _openTransactionFormModal(BuildContext context) {
     showModalBottomSheet(
       context: context,
       builder: (_) {
-        return TransactionUser(_addTransaction);
+        return TransactionForm(_addTransaction);
       },
     );
   }
@@ -88,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.white,
             icon: Icon(Icons.add),
             onPressed: () {
-              //Adicionar transação
+              _openTransactionFormModal(context);
             },
           ),
         ],
@@ -108,13 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('Gráfico de Despesas'),
               ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                TransactionForm(_addTransaction),
-                TransactionList(_transactions),
-              ],
-            ),
+            TransactionList(_transactions),
             //Espaço entre o gráfico e a lista de transações
           ],
         ),
@@ -123,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         child: Icon(Icons.add),
         onPressed: () {
-          //Adicionar transação
+          _openTransactionFormModal(context);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
