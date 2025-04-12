@@ -50,6 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _transactions.add(newTransaction);
     });
     Navigator.of(context).pop(); // fecha o modal
+    //esse navigattor serve tambem , para fazer navegação entre telas, e componentes
+    //exemplo, se tem algo q clica no inicio e te leve para algum lugar no fim do app
   }
 
   _openTransactionFormModal(BuildContext context) {
