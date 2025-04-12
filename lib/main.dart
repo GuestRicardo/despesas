@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.of(context).pop(); // fecha o modal
     //esse navigattor serve tambem , para fazer navegação entre telas, e componentes
     //exemplo, se tem algo q clica no inicio e te leve para algum lugar no fim do app
+    //o pop vai tirar o primeiro elemento da pilha de navegação
   }
 
   _openTransactionFormModal(BuildContext context) {
