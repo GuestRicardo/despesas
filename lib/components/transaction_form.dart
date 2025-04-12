@@ -10,7 +10,7 @@ class TransactionForm extends StatefulWidget {
 }
 
 class _TransactionFormState extends State<TransactionForm> {
-  //comntrollers
+  //controllers
   final titleController = TextEditingController();
 
   final valueController = TextEditingController();
