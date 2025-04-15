@@ -19,6 +19,7 @@ class ExpensesApp extends StatelessWidget {
       home: MyHomePage(),
       theme: ThemeData(
         primarySwatch: Colors.purple,
+        fontFamily: 'OpenSans',
         useMaterial3: false,
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.purple,
@@ -93,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             fontWeight: FontWeight.normal,
             color: Colors.white,
             textBaseline: TextBaseline.alphabetic,
-            fontFamily: 'OpenSans',
+            fontFamily: 'OpenSans-Bold',
             fontStyle: FontStyle.normal,
             letterSpacing: 1.5,
             shadows: [
