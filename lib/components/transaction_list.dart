@@ -15,13 +15,17 @@ class TransactionList extends StatelessWidget {
               ? Column(
                 children: <Widget>[
                   SizedBox(height: 20),
-                  Text(
-                    'Nenhuma Transação Cadastrada!',
-                    style: // Theme.of(context).textTheme.titleLarge,
-                        const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                  Center(
+                    heightFactor: 2,
+                    child: Text(
+                      'Nenhuma Transação Cadastrada!',
+                      textAlign: TextAlign.center,
+                      style: // Theme.of(context).textTheme.titleLarge,
+                          TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
                     ),
                   ),
                   SizedBox(height: 20),
