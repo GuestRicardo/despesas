@@ -14,6 +14,7 @@ class TransactionList extends StatelessWidget {
           transactions.isEmpty
               ? Column(
                 children: <Widget>[
+                  SizedBox(height: 20),
                   Text(
                     'Nenhuma Transação Cadastrada!',
                     style: // Theme.of(context).textTheme.titleLarge,
@@ -23,6 +24,7 @@ class TransactionList extends StatelessWidget {
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
                   ),
+                  SizedBox(height: 20),
                   SizedBox(
                     height: 200,
                     child: Image.asset(
