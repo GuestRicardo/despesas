@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import '../model/transaction.dart';
 
 class Chart extends StatelessWidget {
-  
   final List<Transaction> recentTransactions;
   Chart(this.recentTransactions);
 
@@ -12,10 +11,12 @@ class Chart extends StatelessWidget {
       final weekDay = DateTime.now().subtract(Duration(days: index));
       double totalSum = 0.0;
 
-      for(var i=0; i < recentTransactions.length; i++) {
-        if(recentTransactions[i].date.day == weekDay.day &&
-           recentTransactions[i].date.month == weekDay.month &&
-           recentTransactions[i].date.year == weekDay.year) {
+      for (var i = 0; i < recentTransactions.length; i++) {
+        bool sameDay = recentTransactions[i].date.day == weekDay.day;
+        bool sameMonth = recentTransactions[i].date.month == weekDay.month;
+        bool sameYear = recentTransactions[i].date.year == weekDay.year;
+        
+        if (sameDay && sameMonth && sameYear) {
           totalSum += recentTransactions[i].value;
         }
       }
