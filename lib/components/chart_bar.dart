@@ -15,20 +15,14 @@ class ChartBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children:<Widget>[
+      children: <Widget>[
         Text('R\$${value.toStringAsFixed(2)}'),
-        const SizedBox(
-          height: 60,
-          width: 10,
-          child: null,
-        ),
-        SizedBox(
-          height: 20,
-          width: 10,
-          child: Text(label),
-        ),
-      ] ,
-      
+        SizedBox(height: 4),
+        SizedBox(height: 60, width: 10, child: null),
+        SizedBox(height: 4),
+
+        Text(label),
+      ],
     );
   }
 }
