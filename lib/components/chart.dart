@@ -4,7 +4,7 @@ import '../model/transaction.dart';
 
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransactions;
-  Chart(this.recentTransactions);
+  const Chart(this.recentTransactions, {super.key});
 
   List<Map<String, Object>> get groupedTransactionValues {
     return List.generate(7, (index) {
@@ -15,11 +15,15 @@ class Chart extends StatelessWidget {
         bool sameDay = recentTransactions[i].date.day == weekDay.day;
         bool sameMonth = recentTransactions[i].date.month == weekDay.month;
         bool sameYear = recentTransactions[i].date.year == weekDay.year;
-        
+
         if (sameDay && sameMonth && sameYear) {
           totalSum += recentTransactions[i].value;
         }
       }
+      print(DateFormat.E().format(weekDay));
+      print(totalSum);
+      print('------------------');
+      print('------------------');
 
       return {'day': DateFormat.E().format(weekDay)[0], 'value': totalSum};
     }).reversed.toList();
