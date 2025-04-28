@@ -1,3 +1,4 @@
+import 'package:despesas/components/chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:math';
@@ -139,14 +140,15 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            SizedBox(
-              width: double.infinity,
-              child: Card(
-                color: Colors.blue,
-                elevation: 15,
-                child: Text('Gráfico de Despesas'),
-              ),
-            ),
+            // SizedBox(
+            //   width: double.infinity,
+            //   child: Card(
+            //     color: Colors.blue,
+            //     elevation: 15,
+            //     child: Text('Gráfico de Despesas'),
+            //   ),
+            // ),
+            Chart(_recentTransactions),
             TransactionList(_transactions),
             //Espaço entre o gráfico e a lista de transações
           ],
