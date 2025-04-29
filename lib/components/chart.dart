@@ -26,9 +26,14 @@ class Chart extends StatelessWidget {
     }).reversed.toList();
   }
 
+  double get _weekTotalValue {
+    return groupedTransactionValues.fold(0.0, (sum, item) {
+      return sum + (item['value'] as double);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    groupedTransactionValues;
     return Card(
       elevation: 6,
       margin: const EdgeInsets.all(20),

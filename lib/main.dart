@@ -110,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(
           'Despesas Pessoais',
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.normal,
