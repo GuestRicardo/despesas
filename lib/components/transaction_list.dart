@@ -67,14 +67,15 @@ class TransactionList extends StatelessWidget {
                     title: Text(
                       tr.title,
                       style: const TextStyle(
-                        fontSize: 18,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
                     subtitle: Text(
                       DateFormat('dd/MM/yyy').format(tr.date),
                       style: const TextStyle(
-                        color: Color.fromARGB(255, 56, 56, 56),
+                        color: Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
                   );

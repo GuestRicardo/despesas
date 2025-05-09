@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
 
-      backgroundColor: Color.fromARGB(255, 26, 26, 26),
+      backgroundColor: Color.fromARGB(255, 43, 42, 42),
       //Despesas Pessoais
       body: SingleChildScrollView(
         child: Column(
