@@ -120,7 +120,11 @@ class _MyHomePageState extends State<MyHomePage> {
             fontStyle: FontStyle.normal,
             letterSpacing: 1.5,
             shadows: [
-              Shadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 3),
+              Shadow(
+                color: const Color.fromARGB(255, 255, 255, 255),
+                offset: Offset(2, 2),
+                blurRadius: 3,
+              ),
             ],
           ),
         ),
