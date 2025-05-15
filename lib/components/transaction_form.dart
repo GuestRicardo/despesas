@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
 class TransactionForm extends StatefulWidget {
-  final void Function(String, double, String) onSubmit;
+  final void Function(String, double, String, DateTime) onSubmit;
   const TransactionForm(this.onSubmit, {super.key});
 
   @override
@@ -25,7 +25,7 @@ class _TransactionFormState extends State<TransactionForm> {
     if (title.isEmpty || value <= 0 || category.isEmpty) {
       return;
     }
-    widget.onSubmit(title, value, category);
+    widget.onSubmit(title, value, category, _selectedDate);
   }
 
   _showDatePicker() {
