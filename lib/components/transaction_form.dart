@@ -40,7 +40,9 @@ class _TransactionFormState extends State<TransactionForm> {
       if (pickedDate == null) {
         return;
       }
-      _selectedDate = pickedDate;
+      setState(() {
+        _selectedDate = pickedDate; //atualiza a data selecionada
+      });
     });
   }
 
@@ -84,11 +86,13 @@ class _TransactionFormState extends State<TransactionForm> {
               height: 70,
               child: Row(
                 children: <Widget>[
-                  Text(
-                    _selectedDate == null
-                        ? 'Nenhuma data selecionada!'
-                        : 'Data Selecionada: ${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  Expanded(
+                    child: Text(
+                      _selectedDate == null
+                          ? 'Nenhuma data selecionada!'
+                          : 'Data Selecionada: ${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                   TextButton(
                     onPressed: _showDatePicker,
