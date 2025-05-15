@@ -72,10 +72,12 @@ class _TransactionFormState extends State<TransactionForm> {
                   TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Selecionar data',
+                      'Selecionar Data.',
                       style: TextStyle(
+                        fontSize: 15,
                         color: Colors.purple,
                         fontWeight: FontWeight.bold,
+                        letterSpacing: 0.1,
                       ),
                     ),
                   ),
