@@ -11,15 +11,14 @@ class TransactionForm extends StatefulWidget {
 
 class _TransactionFormState extends State<TransactionForm> {
   //controllers
-  final titleController = TextEditingController();
-
-  final valueController = TextEditingController();
-
+  final _titleController = TextEditingController();
+  final _valueController = TextEditingController();
   final categoryController = TextEditingController();
+  final DateTime _selectedDate = DateTime.now();
 
   _submitForm() {
-    final title = titleController.text;
-    final value = double.tryParse(valueController.text) ?? 0.0;
+    final title = _titleController.text;
+    final value = double.tryParse(_valueController.text) ?? 0.0;
     final category = categoryController.text;
 
     if (title.isEmpty || value <= 0 || category.isEmpty) {
@@ -35,6 +34,7 @@ class _TransactionFormState extends State<TransactionForm> {
       firstDate: DateTime(2024),
       lastDate: DateTime.now(),
     ).then((pickedDate) {
+      //essa função é chamada quando o usuário seleciona uma data(no futuro)
       if (pickedDate == null) {
         return;
       }
@@ -50,7 +50,7 @@ class _TransactionFormState extends State<TransactionForm> {
         child: Column(
           children: <Widget>[
             TextField(
-              controller: titleController,
+              controller: _titleController,
               onSubmitted: (_) => _submitForm(),
               decoration: InputDecoration(
                 labelText: '  Título',
@@ -58,7 +58,7 @@ class _TransactionFormState extends State<TransactionForm> {
               ),
             ),
             TextField(
-              controller: valueController,
+              controller: _valueController,
               keyboardType: TextInputType.numberWithOptions(decimal: true),
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               //o anderline na função abaixo significa que nao será usada para nada
@@ -83,7 +83,7 @@ class _TransactionFormState extends State<TransactionForm> {
                 children: <Widget>[
                   Text('Nenhuma data selecionada!'),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: _showDatePicker,
                     child: Text(
                       'Selecionar Data.',
                       style: TextStyle(
