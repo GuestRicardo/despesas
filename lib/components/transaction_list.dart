@@ -59,6 +59,13 @@ class TransactionList extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
+                              shadows: [
+                                Shadow(
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  offset: Offset(2, 2),
+                                  blurRadius: 3,
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -70,6 +77,13 @@ class TransactionList extends StatelessWidget {
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 255, 255, 255),
+                        shadows: [
+                          Shadow(
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            offset: Offset(2, 2),
+                            blurRadius: 3,
+                          ),
+                        ],
                       ),
                     ),
                     subtitle: Text(
@@ -77,6 +91,13 @@ class TransactionList extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 15,
                         color: Color.fromARGB(255, 255, 255, 255),
+                        shadows: [
+                          Shadow(
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            offset: Offset(2, 2),
+                            blurRadius: 3,
+                          ),
+                        ],
                       ),
                     ),
                   );

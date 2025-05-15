@@ -64,32 +64,58 @@ class _TransactionFormState extends State<TransactionForm> {
                 labelStyle: TextStyle(color: Colors.purple),
               ),
             ),
-            Row(children: <Widget>[
-              Text('Nenhuma data selecionada!'),
-              Butt(
-                onPressed: () {},
-                child: Text(
-                  'Selecionar data',
-                  style: TextStyle(color: Colors.purple),
-                ),
+            SizedBox(
+              height: 70,
+              child: Row(
+                children: <Widget>[
+                  Text('Nenhuma data selecionada!'),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Selecionar data',
+                      style: TextStyle(
+                        color: Colors.purple,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              ]),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton(
+                ElevatedButton(
                   style: ButtonStyle(
                     foregroundColor: WidgetStateProperty.all<Color>(
                       Colors.blue,
                     ),
                   ),
                   onPressed: _submitForm,
-                  child: Text(
-                    'Nova Transação',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
+                  child: Container(
+                    padding: const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
                       color: Colors.purple,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Text(
+                      'Nova Transação',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        textBaseline: TextBaseline.alphabetic,
+                        fontFamily: 'OpenSans-Bold',
+                        fontStyle: FontStyle.normal,
+                        letterSpacing: 0.5,
+                        shadows: [
+                          Shadow(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            offset: Offset(2, 2),
+                            blurRadius: 3,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
