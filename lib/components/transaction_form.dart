@@ -64,6 +64,16 @@ class _TransactionFormState extends State<TransactionForm> {
                 labelStyle: TextStyle(color: Colors.purple),
               ),
             ),
+            Row(children: <Widget>[
+              Text('Nenhuma data selecionada!'),
+              Butt(
+                onPressed: () {},
+                child: Text(
+                  'Selecionar data',
+                  style: TextStyle(color: Colors.purple),
+                ),
+              ),
+              ]),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
