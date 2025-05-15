@@ -23,6 +23,7 @@ class _TransactionFormState extends State<TransactionForm> {
     final category = categoryController.text;
 
     if (title.isEmpty || value <= 0 || category.isEmpty) {
+      //se o título estiver vazio ou o valor for menor ou igual a 0 ou a categoria estiver vazia ou a data selecionada for nula
       return;
     }
     widget.onSubmit(title, value, category, _selectedDate);
