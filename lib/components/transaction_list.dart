@@ -57,7 +57,7 @@ class TransactionList extends StatelessWidget {
                           child: Text(
                             'R\$ ${tr.value.toStringAsFixed(2)}',
                             style: const TextStyle(
-                              fontSize: 25,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -67,7 +67,7 @@ class TransactionList extends StatelessWidget {
                     title: Text(
                       tr.title,
                       style: const TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 255, 255, 255),
                       ),
@@ -75,7 +75,7 @@ class TransactionList extends StatelessWidget {
                     subtitle: Text(
                       DateFormat('dd/MM/yyy').format(tr.date),
                       style: const TextStyle(
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
