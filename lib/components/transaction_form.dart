@@ -87,12 +87,14 @@ class _TransactionFormState extends State<TransactionForm> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                //butão add
                 ElevatedButton(
                   style: ButtonStyle(
                     foregroundColor: WidgetStateProperty.all<Color>(
                       Colors.blue,
                     ),
                   ),
+                  //botão Nova Transação
                   onPressed: _submitForm,
                   child: Container(
                     padding: const EdgeInsets.all(15),
