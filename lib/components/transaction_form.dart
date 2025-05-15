@@ -34,7 +34,7 @@ class _TransactionFormState extends State<TransactionForm> {
       initialDate: DateTime.now(),
       firstDate: DateTime(2024),
       lastDate: DateTime.now(),
-      //essa função(then) é chamada quando o usuário seleciona uma data(no futuro)
+      //essa função(then) é chamada quando o usuário seleciona uma data(no futuro)(assicrona)
     ).then((pickedDate) {
       //esse pickedDate é a data selecionada pelo usuário
       if (pickedDate == null) {
