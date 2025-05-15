@@ -46,27 +46,48 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _transactions = [
-    Transaction(
-      id: 't0',
-      title: '#0',
-      value: 0.76,
-      date: DateTime.now().subtract(Duration(days: 40)),
-      category: 'Conta antiga',
-    ),
-    Transaction(
-      id: 't1',
-      title: '#01',
-      value: 310.76,
-      date: DateTime.now().subtract(Duration(days: 3)),
-      category: 'Esportes',
-    ),
-    Transaction(
-      id: 't2',
-      title: '#02',
-      value: 310.76,
-      date: DateTime.now().subtract(Duration(days: 2)),
-      category: 'Alimentação',
-    ),
+    // Transaction(
+    //   id: 't0',
+    //   title: '#0',
+    //   value: 0.76,
+    //   date: DateTime.now().subtract(Duration(days: 40)),
+    //   category: 'Conta antiga',
+    // ),
+    // Transaction(
+    //   id: 't1',
+    //   title: '#01',
+    //   value: 310.76,
+    //   date: DateTime.now().subtract(Duration(days: 3)),
+    //   category: 'Esportes',
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: '#02',
+    //   value: 310.76,
+    //   date: DateTime.now().subtract(Duration(days: 2)),
+    //   category: 'Alimentação',
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: '#02',
+    //   value: 310.76,
+    //   date: DateTime.now().subtract(Duration(days: 2)),
+    //   category: 'Alimentação',
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: '#02',
+    //   value: 310.76,
+    //   date: DateTime.now().subtract(Duration(days: 2)),
+    //   category: 'Alimentação',
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: '#02',
+    //   value: 310.76,
+    //   date: DateTime.now().subtract(Duration(days: 2)),
+    //   category: 'Alimentação',
+    // ),
   ];
 
   List<Transaction> get _recentTransactions {
