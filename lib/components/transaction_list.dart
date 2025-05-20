@@ -100,6 +100,14 @@ class TransactionList extends StatelessWidget {
                         ],
                       ),
                     ),
+                    trailing: IconButton(
+                      icon: Icon(Icons.delete),
+                      color: Theme.of(context).colorScheme.error,
+                      onPressed: () {
+                        //print('Deletar');
+                        //print(tr.id);
+                      },
+                    ),
                   );
                   //  Card(
                   //   child: Row(
