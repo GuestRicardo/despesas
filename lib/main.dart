@@ -114,6 +114,12 @@ class _MyHomePageState extends State<MyHomePage> {
     //o pop vai tirar o primeiro elemento da pilha de navegação
   }
 
+  _removeTransaction(String id) {
+    setState(() {
+      _transactions.removeWhere((tr) => tr.id == id);
+    });
+  }
+
   _openTransactionFormModal(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -175,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //   ),
             // ),
             Chart(_recentTransactions),
-            TransactionList(_transactions),
+            TransactionList(_transactions,  _removeTransaction),
             //Espaço entre o gráfico e a lista de transações
           ],
         ),

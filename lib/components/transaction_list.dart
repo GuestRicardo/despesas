@@ -4,8 +4,9 @@ import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
+  final void Function(String) onRemove;
 
-  const TransactionList(this.transactions, {super.key});
+  const TransactionList(this.transactions, this.onRemove, {super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -104,6 +105,7 @@ class TransactionList extends StatelessWidget {
                       icon: Icon(Icons.delete),
                       color: Theme.of(context).colorScheme.error,
                       onPressed: () {
+                        onRemove(tr.id);
                         //print('Deletar');
                         //print(tr.id);
                       },
