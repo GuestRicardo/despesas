@@ -165,7 +165,10 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     //altura inicial disponível da tela
-    final availableHeight = MediaQuery.of(context).size.height;
+    final availableHeight =
+        MediaQuery.of(context).size.height -
+        appBar.preferredSize.height -
+        MediaQuery.of(context).padding.top;
 
     return Scaffold(
       appBar: appBar,
