@@ -183,9 +183,19 @@ class _MyHomePageState extends State<MyHomePage> {
             //     child: Text('Gráfico de Despesas'),
             //   ),
             // ),
-            Chart(_recentTransactions),
+            SizedBox(
+              height: availableHeight * 0.4,
+              child: Chart(_recentTransactions), // 60% da altura disponível
+            ),
             //Lista de transações
-            Container(TransactionList(_transactions, _removeTransaction)),
+            SizedBox(
+              height: availableHeight * 0.6, // 60% da altura disponível
+              //height: 500,
+              //width: double.infinity,
+              //padding: const EdgeInsets.all(10),
+              //margin: const EdgeInsets.all(10),
+              child: TransactionList(_transactions, _removeTransaction),
+            ),
             //Espaço entre o gráfico e a lista de transações
           ],
         ),
