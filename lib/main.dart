@@ -181,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //   ),
             // ),
             Chart(_recentTransactions),
-
+            //Lista de transações
             TransactionList(_transactions, _removeTransaction),
             //Espaço entre o gráfico e a lista de transações
           ],
