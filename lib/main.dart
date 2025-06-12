@@ -131,44 +131,44 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final appBar = AppBar(
+      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      title: Text(
+        'Despesas Pessoais',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.normal,
+          color: Colors.white,
+          textBaseline: TextBaseline.alphabetic,
+          fontFamily: 'OpenSans-Bold',
+          fontStyle: FontStyle.normal,
+          letterSpacing: 1.5,
+          shadows: [
+            Shadow(
+              color: const Color.fromARGB(255, 255, 255, 255),
+              offset: Offset(2, 2),
+              blurRadius: 3,
+            ),
+          ],
+        ),
+      ),
+      actions: <Widget>[
+        IconButton(
+          color: Colors.white,
+          icon: Icon(Icons.add),
+          onPressed: () {
+            _openTransactionFormModal(context);
+          },
+        ),
+      ],
+    );
+
     //altura inicial disponível da tela
     final availableHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 0, 0, 0),
-
-        title: Text(
-          'Despesas Pessoais',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.normal,
-            color: Colors.white,
-            textBaseline: TextBaseline.alphabetic,
-            fontFamily: 'OpenSans-Bold',
-            fontStyle: FontStyle.normal,
-            letterSpacing: 1.5,
-            shadows: [
-              Shadow(
-                color: const Color.fromARGB(255, 255, 255, 255),
-                offset: Offset(2, 2),
-                blurRadius: 3,
-              ),
-            ],
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            color: Colors.white,
-            icon: Icon(Icons.add),
-            onPressed: () {
-              _openTransactionFormModal(context);
-            },
-          ),
-        ],
-      ),
-
+      appBar: appBar,
       backgroundColor: Color.fromARGB(255, 43, 42, 42),
       //Despesas Pessoais
       body: SingleChildScrollView(
