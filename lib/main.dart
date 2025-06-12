@@ -187,12 +187,12 @@ class _MyHomePageState extends State<MyHomePage> {
             //   ),
             // ),
             SizedBox(
-              height: availableHeight * 0.4,
+              height: availableHeight * 0.3,
               child: Chart(_recentTransactions), // 60% da altura disponível
             ),
             //Lista de transações
             SizedBox(
-              height: availableHeight * 0.6, // 60% da altura disponível
+              height: availableHeight * 0.7, // 60% da altura disponível
               //height: 500,
               //width: double.infinity,
               //padding: const EdgeInsets.all(10),
