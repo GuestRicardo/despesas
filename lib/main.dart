@@ -131,6 +131,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //altura inicial disponível da tela
+    final availableHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 0, 0),
@@ -182,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // ),
             Chart(_recentTransactions),
             //Lista de transações
-            TransactionList(_transactions, _removeTransaction),
+            Container(TransactionList(_transactions, _removeTransaction)),
             //Espaço entre o gráfico e a lista de transações
           ],
         ),
