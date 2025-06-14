@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'Despesas Pessoais',
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 30,
+          fontSize: 30 * MediaQuery.of(context).textScaleFactor,
           fontWeight: FontWeight.normal,
           color: Colors.white,
           textBaseline: TextBaseline.alphabetic,
