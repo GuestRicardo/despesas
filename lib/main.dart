@@ -185,6 +185,13 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Exibir Gráfico'),
+              Switch(value: true, onChanged: (value) {}),
+            ],
+          ),
           children: <Widget>[
             // SizedBox(
             //   width: double.infinity,
