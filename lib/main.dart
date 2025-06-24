@@ -16,6 +16,14 @@ class ExpensesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //essa linha é para forçar o aplicativo a rodar apenas em modo retrato
+    //isso é útil para aplicativos que não precisam de rotação de tela, como jogos ou calculadoras
+    //isso é opcional, mas é uma boa prática para aplicativos que não precisam de rotação de tela
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return MaterialApp(
       home: MyHomePage(),
       theme: ThemeData(
