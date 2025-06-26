@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import '../../model/transaction.dart';
 import 'package:intl/intl.dart';
 
@@ -10,31 +11,35 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return transactions.isEmpty
-        ? Column(
-          children: <Widget>[
-            SizedBox(height: 20),
-            Center(
-              heightFactor: 2,
-              child: Text(
-                'Nenhuma Transação Cadastrada!',
-                textAlign: TextAlign.center,
-                style: // Theme.of(context).textTheme.titleLarge,
-                    TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 255, 255, 255),
+        ? LayoutBuilder(
+          builder: (ctx, constraints) {
+            return Column(
+              children: <Widget>[
+                SizedBox(height: 20),
+                Center(
+                  heightFactor: 2,
+                  child: Text(
+                    'Nenhuma Transação Cadastrada!',
+                    textAlign: TextAlign.center,
+                    style: // Theme.of(context).textTheme.titleLarge,
+                        TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(height: 20),
-            SizedBox(
-              height: 200,
-              child: Image.asset(
-                'assets/images/waiting.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-          ],
+                SizedBox(height: 20),
+                SizedBox(
+                  height: constraints.maxHeight * 0.6,
+                  child: Image.asset(
+                    'assets/images/waiting.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
+            );
+          },
         )
         : ListView.builder(
           itemCount: transactions.length,
