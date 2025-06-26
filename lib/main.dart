@@ -97,6 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
     //   category: 'Alimentação',
     // ),
   ];
+  //para exibir o gráfico, vamos usar um booleano
+  //que vai controlar se o gráfico deve ser exibido ou não
   bool _showChart = false;
 
   List<Transaction> get _recentTransactions {
@@ -198,34 +200,38 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Switch(
-                  value: true,
+                  value: _showChart,
                   onChanged: (value) {
                     // Lógica para alternar a exibição do gráfico
+                    setState(() {
+                      _showChart = value;
+                    });
                   },
                 ),
               ],
             ),
-            // SizedBox(
-            //   width: double.infinity,
-            //   child: Card(
-            //     color: Colors.blue,
-            //     elevation: 15,
-            //     child: Text('Gráfico de Despesas'),
-            //   ),
-            // ),
-            SizedBox(
-              height: availableHeight * 0.20,
-              child: Chart(_recentTransactions), // 60% da altura disponível
-            ),
-            //Lista de transações
-            SizedBox(
-              height: availableHeight * 0.70, // 60% da altura disponível
-              //height: 500,
-              //width: double.infinity,
-              //padding: const EdgeInsets.all(10),
-              //margin: const EdgeInsets.all(10),
-              child: TransactionList(_transactions, _removeTransaction),
-            ),
+            _showChart
+                // SizedBox(
+                //   width: double.infinity,
+                //   child: Card(
+                //     color: Colors.blue,
+                //     elevation: 15,
+                //     child: Text('Gráfico de Despesas'),
+                //   ),
+                // ),
+                ? SizedBox(
+                  height: availableHeight * 0.20,
+                  child: Chart(_recentTransactions), // 60% da altura disponível
+                )
+                //Lista de transações
+                : SizedBox(
+                  height: availableHeight * 0.70, // 60% da altura disponível
+                  //height: 500,
+                  //width: double.infinity,
+                  //padding: const EdgeInsets.all(10),
+                  //margin: const EdgeInsets.all(10),
+                  child: TransactionList(_transactions, _removeTransaction),
+                ),
             //Espaço entre o gráfico e a lista de transações
           ],
         ),
