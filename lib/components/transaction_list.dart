@@ -29,7 +29,7 @@ class TransactionList extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: constraints.maxHeight * 0.05),
                 SizedBox(
                   height: constraints.maxHeight * 0.6,
                   child: Image.asset(
