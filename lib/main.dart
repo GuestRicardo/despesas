@@ -189,7 +189,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('Exibir Gráfico'),
+                Text(
+                  'Exibir Gráfico',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20 * MediaQuery.of(context).textScaleFactor,
+                  ),
+                ),
                 Switch(
                   value: true,
                   onChanged: (value) {
