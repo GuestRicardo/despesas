@@ -185,14 +185,19 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('Exibir Gráfico'),
-              Switch(value: true, onChanged: (value) {}),
-            ],
-          ),
           children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Exibir Gráfico'),
+                Switch(
+                  value: true,
+                  onChanged: (value) {
+                    // Lógica para alternar a exibição do gráfico
+                  },
+                ),
+              ],
+            ),
             // SizedBox(
             //   width: double.infinity,
             //   child: Card(
