@@ -97,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
     //   category: 'Alimentação',
     // ),
   ];
+  bool _showChart = false;
 
   List<Transaction> get _recentTransactions {
     return _transactions.where((tr) {
