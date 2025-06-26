@@ -15,15 +15,15 @@ class TransactionList extends StatelessWidget {
           builder: (ctx, constraints) {
             return Column(
               children: <Widget>[
-                SizedBox(height: 20),
-                Center(
-                  heightFactor: 2,
+                SizedBox(height: constraints.maxHeight * 0.05),
+                SizedBox(
+                  height: constraints.maxHeight * 0.3,
                   child: Text(
                     'Nenhuma Transação Cadastrada!',
                     textAlign: TextAlign.center,
                     style: // Theme.of(context).textTheme.titleLarge,
                         TextStyle(
-                      fontSize: 35,
+                      fontSize: 30 * MediaQuery.of(context).textScaleFactor,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
