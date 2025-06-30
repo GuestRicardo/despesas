@@ -142,7 +142,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-   bool modoPaisagem = MediaQuery.of(context).orientation == Orientation.landscape;
+    bool modoPaisagem =
+        MediaQuery.of(context).orientation == Orientation.landscape;
 
     final appBar = AppBar(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
@@ -191,27 +192,28 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Exibir Gráfico',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20 * MediaQuery.of(context).textScaleFactor,
+            if (modoPaisagem)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Exibir Gráfico',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20 * MediaQuery.of(context).textScaleFactor,
+                    ),
                   ),
-                ),
-                Switch(
-                  value: _showChart,
-                  onChanged: (value) {
-                    // Lógica para alternar a exibição do gráfico
-                    setState(() {
-                      _showChart = value;
-                    });
-                  },
-                ),
-              ],
-            ),
+                  Switch(
+                    value: _showChart,
+                    onChanged: (value) {
+                      // Lógica para alternar a exibição do gráfico
+                      setState(() {
+                        _showChart = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
             _showChart
                 // SizedBox(
                 //   width: double.infinity,
