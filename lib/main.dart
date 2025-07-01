@@ -143,8 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    bool modoPaisagem =
-        MediaQuery.of(context).orientation == Orientation.landscape;
+    bool modoPaisagem = mediaQuery.orientation == Orientation.landscape;
 
     final appBar = AppBar(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
