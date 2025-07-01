@@ -196,7 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         mediaQuery.padding.top;
 
-    return Scaffold(
+    return Platform.isIOS ? Scaffold(
       appBar: appBar,
       backgroundColor: Color.fromARGB(255, 43, 42, 42),
       //Despesas Pessoais
