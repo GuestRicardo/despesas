@@ -49,109 +49,116 @@ class _TransactionFormState extends State<TransactionForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 8,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          children: <Widget>[
-            TextField(
-              controller: _titleController,
-              onSubmitted: (_) => _submitForm(),
-              decoration: InputDecoration(
-                labelText: '  Título',
-                labelStyle: TextStyle(color: Colors.purple),
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 8,
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 10,
+            left: 10,
+            right: 10,
+            bottom: 10 + MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: Column(
+            children: <Widget>[
+              TextField(
+                controller: _titleController,
+                onSubmitted: (_) => _submitForm(),
+                decoration: InputDecoration(
+                  labelText: '  Título',
+                  labelStyle: TextStyle(color: Colors.purple),
+                ),
               ),
-            ),
-            TextField(
-              controller: _valueController,
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              //o anderline na função abaixo significa que nao será usada para nada
-              onSubmitted: (_) => _submitForm(),
-              decoration: InputDecoration(
-                labelText: '  Valor (R\$)',
-                labelStyle: TextStyle(color: Colors.purple),
+              TextField(
+                controller: _valueController,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                //o anderline na função abaixo significa que nao será usada para nada
+                onSubmitted: (_) => _submitForm(),
+                decoration: InputDecoration(
+                  labelText: '  Valor (R\$)',
+                  labelStyle: TextStyle(color: Colors.purple),
+                ),
+                //teclado numerico
               ),
-              //teclado numerico
-            ),
-            TextField(
-              controller: categoryController,
-              onSubmitted: (_) => _submitForm(),
-              decoration: InputDecoration(
-                labelText: '  Categoria',
-                labelStyle: TextStyle(color: Colors.purple),
+              TextField(
+                controller: categoryController,
+                onSubmitted: (_) => _submitForm(),
+                decoration: InputDecoration(
+                  labelText: '  Categoria',
+                  labelStyle: TextStyle(color: Colors.purple),
+                ),
               ),
-            ),
-            SizedBox(
-              height: 70,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      _selectedDate == null
-                          ? 'Nenhuma data selecionada!'
-                          : 'Data Selecionada: ${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+              SizedBox(
+                height: 70,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(
+                        _selectedDate == null
+                            ? 'Nenhuma data selecionada!'
+                            : 'Data Selecionada: ${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
-                  ),
-                  TextButton(
-                    onPressed: _showDatePicker,
-                    child: Text(
-                      'Selecionar Data.',
-                      style: TextStyle(
-                        fontSize: 15,
+                    TextButton(
+                      onPressed: _showDatePicker,
+                      child: Text(
+                        'Selecionar Data.',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.purple,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.1,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  //butão add
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      foregroundColor: WidgetStateProperty.all<Color>(
+                        Colors.blue,
+                      ),
+                    ),
+                    //botão Nova Transação
+                    onPressed: _submitForm,
+                    child: Container(
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
                         color: Colors.purple,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 0.1,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Text(
+                        'Nova Transação',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          textBaseline: TextBaseline.alphabetic,
+                          fontFamily: 'OpenSans-Bold',
+                          fontStyle: FontStyle.normal,
+                          letterSpacing: 0.5,
+                          shadows: [
+                            Shadow(
+                              color: const Color.fromARGB(255, 0, 0, 0),
+                              offset: Offset(2, 2),
+                              blurRadius: 3,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                //butão add
-                ElevatedButton(
-                  style: ButtonStyle(
-                    foregroundColor: WidgetStateProperty.all<Color>(
-                      Colors.blue,
-                    ),
-                  ),
-                  //botão Nova Transação
-                  onPressed: _submitForm,
-                  child: Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: Colors.purple,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Text(
-                      'Nova Transação',
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        textBaseline: TextBaseline.alphabetic,
-                        fontFamily: 'OpenSans-Bold',
-                        fontStyle: FontStyle.normal,
-                        letterSpacing: 0.5,
-                        shadows: [
-                          Shadow(
-                            color: const Color.fromARGB(255, 0, 0, 0),
-                            offset: Offset(2, 2),
-                            blurRadius: 3,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
