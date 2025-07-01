@@ -68,34 +68,34 @@ class _MyHomePageState extends State<MyHomePage> {
       date: DateTime.now().subtract(Duration(days: 3)),
       category: 'Esportes',
     ),
-    // Transaction(
-    //   id: 't2',
-    //   title: '#02',
-    //   value: 310.76,
-    //   date: DateTime.now().subtract(Duration(days: 2)),
-    //   category: 'Alimentação',
-    // ),
-    // Transaction(
-    //   id: 't2',
-    //   title: '#02',
-    //   value: 310.76,
-    //   date: DateTime.now().subtract(Duration(days: 2)),
-    //   category: 'Alimentação',
-    // ),
-    // Transaction(
-    //   id: 't2',
-    //   title: '#02',
-    //   value: 310.76,
-    //   date: DateTime.now().subtract(Duration(days: 2)),
-    //   category: 'Alimentação',
-    // ),
-    // Transaction(
-    //   id: 't2',
-    //   title: '#02',
-    //   value: 310.76,
-    //   date: DateTime.now().subtract(Duration(days: 2)),
-    //   category: 'Alimentação',
-    // ),
+    Transaction(
+      id: 't2',
+      title: '#02',
+      value: 310.76,
+      date: DateTime.now().subtract(Duration(days: 2)),
+      category: 'Alimentação',
+    ),
+    Transaction(
+      id: 't2',
+      title: '#02',
+      value: 310.76,
+      date: DateTime.now().subtract(Duration(days: 2)),
+      category: 'Alimentação',
+    ),
+    Transaction(
+      id: 't2',
+      title: '#02',
+      value: 310.76,
+      date: DateTime.now().subtract(Duration(days: 2)),
+      category: 'Alimentação',
+    ),
+    Transaction(
+      id: 't2',
+      title: '#02',
+      value: 310.76,
+      date: DateTime.now().subtract(Duration(days: 2)),
+      category: 'Alimentação',
+    ),
   ];
   //para exibir o gráfico, vamos usar um booleano
   //que vai controlar se o gráfico deve ser exibido ou não
