@@ -235,14 +235,16 @@ class _MyHomePageState extends State<MyHomePage> {
             if (_showChart ||
                 !modoPaisagem) // Se o gráfico deve ser exibido ou se não está em modo paisagem)
               SizedBox(
-                height: availableHeight * (modoPaisagem ? 0.6 : 0.20),
+                height: availableHeight * (modoPaisagem ? 0.7 : 0.20),
                 child: Chart(_recentTransactions), // 60% da altura disponível
               ),
             //Lista de transações
             if (!_showChart ||
                 !modoPaisagem) // Se o gráfico não deve ser exibido ou se está em modo paisagem
               SizedBox(
-                height: availableHeight * 0.70, // 60% da altura disponível
+                height:
+                    availableHeight *
+                    (modoPaisagem ? 1 : 0.7), // 60% da altura disponível
                 //height: 500,
                 //width: double.infinity,
                 //padding: const EdgeInsets.all(10),
