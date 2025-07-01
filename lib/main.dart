@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:despesas/components/chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -255,13 +257,16 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 0, 109, 182),
-        child: Icon(Icons.add),
-        onPressed: () {
-          _openTransactionFormModal(context);
-        },
-      ),
+      floatingActionButton:
+          Platform.isIOS
+              ? Container()
+              : FloatingActionButton(
+                backgroundColor: Color.fromARGB(255, 0, 109, 182),
+                child: Icon(Icons.add),
+                onPressed: () {
+                  _openTransactionFormModal(context);
+                },
+              ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
