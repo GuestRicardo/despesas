@@ -100,27 +100,29 @@ class TransactionList extends StatelessWidget {
                   ],
                 ),
               ),
-              trailing: MediaQuery.of(context).size.width >400 
-              ? Button.icon(
-                icon: const Icon(Icons.delete),
-                label: const Text('Excluir'),
-                color: Theme.of(context).colorScheme.error,
-                onPressed: () {
-                  onRemove(tr.id);
-                  //print('Deletar');
-                  //print(tr.id);
-                },
-              )           
-              
-              : IconButton(
-                icon: Icon(Icons.delete),
-                color: Theme.of(context).colorScheme.error,
-                onPressed: () {
-                  onRemove(tr.id);
-                  //print('Deletar');
-                  //print(tr.id);
-                },
-              ),
+              trailing:
+                  MediaQuery.of(context).size.width > 400
+                      ? TextButton.icon(
+                        icon: const Icon(Icons.delete),
+                        label: const Text('Excluir'),
+                        style: TextButton.styleFrom(
+                          foregroundColor: Theme.of(context).colorScheme.error,
+                        ),
+                        onPressed: () {
+                          onRemove(tr.id);
+                          //print('Deletar');
+                          //print(tr.id);
+                        },
+                      )
+                      : IconButton(
+                        icon: Icon(Icons.delete),
+                        color: Theme.of(context).colorScheme.error,
+                        onPressed: () {
+                          onRemove(tr.id);
+                          //print('Deletar');
+                          //print(tr.id);
+                        },
+                      ),
             );
             //  Card(
             //   child: Row(
