@@ -142,6 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     bool modoPaisagem =
         MediaQuery.of(context).orientation == Orientation.landscape;
 
@@ -151,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'Despesas Pessoais',
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 30 * MediaQuery.of(context).textScaleFactor,
+          fontSize: 30 * mediaQuery.textScaleFactor,
           fontWeight: FontWeight.normal,
           color: Colors.white,
           textBaseline: TextBaseline.alphabetic,
@@ -190,9 +191,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
     //altura inicial disponível da tela
     final availableHeight =
-        MediaQuery.of(context).size.height -
+        mediaQuery.size.height -
         appBar.preferredSize.height -
-        MediaQuery.of(context).padding.top;
+        mediaQuery.padding.top;
 
     return Scaffold(
       appBar: appBar,
