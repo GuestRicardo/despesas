@@ -168,21 +168,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       actions: <Widget>[
+        if (modoPaisagem)
+          IconButton(
+            color: Colors.white,
+            icon: Icon(_showChart ? Icons.list : Icons.show_chart),
+            onPressed: () {
+              setState(() {
+                _showChart = !_showChart; // Alterna a exibição do gráfico
+              });
+            },
+          ),
         IconButton(
           color: Colors.white,
           icon: Icon(Icons.add),
           onPressed: () {
             _openTransactionFormModal(context);
-          },          
-        ),
-        IconButton(
-          color: Colors.white,
-          icon: Icon(Icons.add),
-          onPressed: () {
-            setState(() {
-              _showChart = !_showChart; // Alterna a exibição do gráfico
-            });
-          },          
+          },
         ),
       ],
     );
@@ -201,28 +202,28 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            if (modoPaisagem)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Exibir Gráfico',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20 * MediaQuery.of(context).textScaleFactor,
-                    ),
-                  ),
-                  Switch(
-                    value: _showChart,
-                    onChanged: (value) {
-                      // Lógica para alternar a exibição do gráfico
-                      setState(() {
-                        _showChart = value;
-                      });
-                    },
-                  ),
-                ],
-              ),
+            // if (modoPaisagem)
+            //   Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: <Widget>[
+            //       Text(
+            //         'Exibir Gráfico',
+            //         style: TextStyle(
+            //           color: Colors.white,
+            //           fontSize: 20 * MediaQuery.of(context).textScaleFactor,
+            //         ),
+            //       ),
+            //       Switch(
+            //         value: _showChart,
+            //         onChanged: (value) {
+            //           // Lógica para alternar a exibição do gráfico
+            //           setState(() {
+            //             _showChart = value;
+            //           });
+            //         },
+            //       ),
+            //     ],
+            //   ),
             // SizedBox(
             //   width: double.infinity,
             //   child: Card(
