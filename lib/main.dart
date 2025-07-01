@@ -173,7 +173,16 @@ class _MyHomePageState extends State<MyHomePage> {
           icon: Icon(Icons.add),
           onPressed: () {
             _openTransactionFormModal(context);
-          },
+          },          
+        ),
+        IconButton(
+          color: Colors.white,
+          icon: Icon(Icons.add),
+          onPressed: () {
+            setState(() {
+              _showChart = !_showChart; // Alterna a exibição do gráfico
+            });
+          },          
         ),
       ],
     );
