@@ -197,6 +197,64 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         mediaQuery.padding.top;
 
+    final pageBody = SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          // if (modoPaisagem)
+          //   Row(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: <Widget>[
+          //       Text(
+          //         'Exibir Gráfico',
+          //         style: TextStyle(
+          //           color: Colors.white,
+          //           fontSize: 20 * MediaQuery.of(context).textScaleFactor,
+          //         ),
+          //       ),
+          //       Switch(
+          //         value: _showChart,
+          //         onChanged: (value) {
+          //           // Lógica para alternar a exibição do gráfico
+          //           setState(() {
+          //             _showChart = value;
+          //           });
+          //         },
+          //       ),
+          //     ],
+          //   ),
+          // SizedBox(
+          //   width: double.infinity,
+          //   child: Card(
+          //     color: Colors.blue,
+          //     elevation: 15,
+          //     child: Text('Gráfico de Despesas'),
+          //   ),
+          // ),
+          if (_showChart ||
+              !modoPaisagem) // Se o gráfico deve ser exibido ou se não está em modo paisagem)
+            SizedBox(
+              height: availableHeight * (modoPaisagem ? 0.7 : 0.20),
+              child: Chart(_recentTransactions), // 60% da altura disponível
+            ),
+          //Lista de transações
+          if (!_showChart ||
+              !modoPaisagem) // Se o gráfico não deve ser exibido ou se está em modo paisagem
+            SizedBox(
+              height:
+                  availableHeight *
+                  (modoPaisagem ? 1 : 0.7), // 60% da altura disponível
+              //height: 500,
+              //width: double.infinity,
+              //padding: const EdgeInsets.all(10),
+              //margin: const EdgeInsets.all(10),
+              child: TransactionList(_transactions, _removeTransaction),
+            ),
+          //Espaço entre o gráfico e a lista de transações
+        ],
+      ),
+    );
+
     return Platform.isIOS
         ? CupertinoPageScaffold(
           child: Container(), // Use an empty Container as a placeholder
@@ -205,65 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
           appBar: appBar,
           backgroundColor: Color.fromARGB(255, 43, 42, 42),
           //Despesas Pessoais
-          body: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                // if (modoPaisagem)
-                //   Row(
-                //     mainAxisAlignment: MainAxisAlignment.center,
-                //     children: <Widget>[
-                //       Text(
-                //         'Exibir Gráfico',
-                //         style: TextStyle(
-                //           color: Colors.white,
-                //           fontSize: 20 * MediaQuery.of(context).textScaleFactor,
-                //         ),
-                //       ),
-                //       Switch(
-                //         value: _showChart,
-                //         onChanged: (value) {
-                //           // Lógica para alternar a exibição do gráfico
-                //           setState(() {
-                //             _showChart = value;
-                //           });
-                //         },
-                //       ),
-                //     ],
-                //   ),
-                // SizedBox(
-                //   width: double.infinity,
-                //   child: Card(
-                //     color: Colors.blue,
-                //     elevation: 15,
-                //     child: Text('Gráfico de Despesas'),
-                //   ),
-                // ),
-                if (_showChart ||
-                    !modoPaisagem) // Se o gráfico deve ser exibido ou se não está em modo paisagem)
-                  SizedBox(
-                    height: availableHeight * (modoPaisagem ? 0.7 : 0.20),
-                    child: Chart(
-                      _recentTransactions,
-                    ), // 60% da altura disponível
-                  ),
-                //Lista de transações
-                if (!_showChart ||
-                    !modoPaisagem) // Se o gráfico não deve ser exibido ou se está em modo paisagem
-                  SizedBox(
-                    height:
-                        availableHeight *
-                        (modoPaisagem ? 1 : 0.7), // 60% da altura disponível
-                    //height: 500,
-                    //width: double.infinity,
-                    //padding: const EdgeInsets.all(10),
-                    //margin: const EdgeInsets.all(10),
-                    child: TransactionList(_transactions, _removeTransaction),
-                  ),
-                //Espaço entre o gráfico e a lista de transações
-              ],
-            ),
-          ),
+          body: pageBody,
           floatingActionButton:
               Platform.isIOS
                   ? Container()
